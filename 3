@@ -1,0 +1,223 @@
+import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero.jpg";
+import essenceImg from "@/assets/case-essence.jpg";
+import chronosImg from "@/assets/case-chronos.jpg";
+import mouvementImg from "@/assets/case-mouvement.jpg";
+import horizonImg from "@/assets/case-horizon.jpg";
+
+export const Route = createFileRoute("/")({
+  component: Index,
+});
+
+function Index() {
+  return (
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
+      {/* Nav */}
+      <nav className="fixed top-0 left-0 w-full z-50 px-6 py-8 flex justify-between items-baseline mix-blend-difference text-background">
+        <span className="font-mono text-xs tracking-widest uppercase">Adgencies / Paris</span>
+        <div className="hidden md:flex gap-12 font-mono text-xs tracking-widest uppercase">
+          <a href="#projets" className="hover:text-primary transition-colors">Projets</a>
+          <a href="#manifeste" className="hover:text-primary transition-colors">Manifeste</a>
+          <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <header className="relative min-h-screen flex flex-col justify-end px-6 pb-20 pt-32 overflow-hidden">
+        <div className="absolute top-0 right-0 w-full md:w-1/2 h-full -z-10 opacity-40 md:opacity-100">
+          <img
+            src={heroImg}
+            alt="Éditorial mode"
+            width={1024}
+            height={1536}
+            className="w-full h-full object-cover grayscale"
+          />
+        </div>
+
+        <div className="max-w-6xl w-full">
+          <h1 className="font-display italic tracking-tighter animate-in text-[18vw] md:text-[14vw] leading-[0.85]">
+            Nous créons <br />
+            <span className="text-primary">l'obsession.</span>
+          </h1>
+
+          <div className="mt-12 flex flex-col md:flex-row gap-12 items-start animate-in">
+            <p className="max-w-md text-xl leading-relaxed text-pretty">
+              Une agence créative indépendante dédiée à la provocation des sens et à la clarté stratégique. Nous ne faisons pas de publicité, nous bâtissons des icônes.
+            </p>
+            <div className="pt-2">
+              <div className="h-px bg-foreground animate-line" />
+              <span className="font-mono text-[10px] uppercase tracking-widest block mt-4">
+                Découvrir nos œuvres
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Work Grid */}
+      <section id="projets" className="px-6 py-32 border-t border-border">
+        <div className="flex justify-between items-end mb-20">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            (01) Études de Cas
+          </h2>
+          <span className="font-display text-4xl italic">Sélection 2024</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-y-32 gap-x-6">
+          {/* 01 */}
+          <article className="md:col-span-7 group cursor-pointer">
+            <div className="overflow-hidden relative">
+              <img
+                src={essenceImg}
+                alt="L'Essence — Campagne"
+                width={1280}
+                height={960}
+                loading="lazy"
+                className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
+            </div>
+            <div className="mt-8 flex justify-between items-start gap-6">
+              <div>
+                <h3 className="text-4xl font-display italic mb-2">L'Essence</h3>
+                <p className="text-muted-foreground max-w-sm">
+                  Redéfinir le luxe olfactif pour une nouvelle génération de rebelles.
+                </p>
+              </div>
+              <span className="font-mono text-xs uppercase tracking-tighter pt-2 whitespace-nowrap">
+                Direct. Art / Film / Print
+              </span>
+            </div>
+          </article>
+
+          {/* 02 */}
+          <article className="md:col-span-4 md:col-start-9 mt-12 md:mt-48 group cursor-pointer">
+            <div className="overflow-hidden">
+              <img
+                src={chronosImg}
+                alt="Chronos — Identité"
+                width={896}
+                height={1120}
+                loading="lazy"
+                className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="mt-8">
+              <h3 className="text-3xl font-display italic mb-2">Chronos</h3>
+              <p className="text-muted-foreground">
+                Une identité visuelle forgée dans le titane et le temps.
+              </p>
+            </div>
+          </article>
+
+          {/* 03 */}
+          <article className="md:col-span-5 group cursor-pointer">
+            <div className="overflow-hidden">
+              <img
+                src={mouvementImg}
+                alt="Mouvement — Branding"
+                width={1024}
+                height={1216}
+                loading="lazy"
+                className="w-full aspect-[5/6] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="mt-8">
+              <h3 className="text-3xl font-display italic mb-2">Mouvement</h3>
+              <p className="text-muted-foreground">
+                L'identité sonore et visuelle du festival d'avant-garde.
+              </p>
+            </div>
+          </article>
+
+          {/* 04 */}
+          <article className="md:col-span-6 md:col-start-7 group cursor-pointer">
+            <div className="overflow-hidden">
+              <img
+                src={horizonImg}
+                alt="Horizon — Stratégie"
+                width={1280}
+                height={800}
+                loading="lazy"
+                className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="mt-8">
+              <h3 className="text-3xl font-display italic mb-2">Horizon</h3>
+              <p className="text-muted-foreground">
+                Lancement mondial de la première plateforme de mobilité autonome.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="px-6 py-32 border-t border-border">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+              (02) Expertises
+            </span>
+            <h2 className="mt-6 font-display italic text-5xl md:text-6xl leading-tight">
+              Ce que nous <br />
+              <span className="text-primary">forgeons.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-8 grid sm:grid-cols-2 gap-12">
+            {[
+              { n: "01", t: "Stratégie de marque", d: "Positionnement, plateforme narrative et territoires d'expression." },
+              { n: "02", t: "Direction artistique", d: "Identité visuelle, système typographique, direction photo et film." },
+              { n: "03", t: "Campagnes globales", d: "Concept, production, film, print, digital et affichage." },
+              { n: "04", t: "Achat média", d: "Planification et acquisition sur Meta, TikTok, YouTube et OOH premium." },
+            ].map((s) => (
+              <div key={s.n} className="border-t border-border pt-6">
+                <div className="font-mono text-xs text-muted-foreground mb-4">{s.n}</div>
+                <h3 className="font-display italic text-2xl mb-3">{s.t}</h3>
+                <p className="text-muted-foreground leading-relaxed">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Manifeste / CTA */}
+      <section id="manifeste" className="bg-foreground text-background py-40 px-6 overflow-hidden">
+        <div className="max-w-6xl mx-auto text-center">
+          <span className="font-mono text-xs uppercase tracking-[0.4em] mb-12 block text-primary">
+            Notre Philosophie
+          </span>
+          <h2 className="text-5xl md:text-8xl font-display italic tracking-tighter leading-tight">
+            La peur est le <br /> poison du <span className="text-primary">génie.</span>
+          </h2>
+          <div className="mt-16 flex justify-center" id="contact">
+            <a
+              href="mailto:hello@adgencies.com"
+              className="group relative inline-block py-6 px-12 border border-background/20 hover:border-primary transition-colors duration-500 overflow-hidden"
+            >
+              <span className="relative z-10 font-mono text-sm uppercase tracking-widest">
+                Collaborer avec nous
+              </span>
+              <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-border">
+        <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          © 2024 Adgencies. Tous droits réservés.
+        </div>
+        <div className="flex gap-8">
+          <a href="#" className="font-mono text-[10px] uppercase tracking-widest hover:text-primary">Instagram</a>
+          <a href="#" className="font-mono text-[10px] uppercase tracking-widest hover:text-primary">LinkedIn</a>
+          <a href="#" className="font-mono text-[10px] uppercase tracking-widest hover:text-primary">Behance</a>
+        </div>
+        <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          Fait à Paris, avec audace.
+        </div>
+      </footer>
+    </div>
+  );
+}
